@@ -1,0 +1,55 @@
+{
+  "id": "3be9dab9-f19d-425a-a311-d9d1e5dcac2e",
+  "name": "Lykis_Project",
+  "publisher": "Aakanksha",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [{
+  "id": "d94e4766-c152-4112-ad55-258769c420e0",
+    "name": "Lykis Enhancement2",
+    "publisher": "Suchita",
+    "version": "1.0.0.144"
+  },
+{
+  "id": "790b0eb3-17ca-4470-a899-db8ca4a752a1",
+  "name": "DocumentFlow",
+  "publisher": "Amol",
+  "version": "1.0.0.18"
+},
+{
+  "id": "3d703e79-d2ae-4211-9514-99be427d02f4",
+  "name": "Lykis Enhancement",
+  "publisher": "Suchita",
+  "version": "1.0.0.48"
+},
+{
+  "id": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
+  "name": "India GST",
+   "publisher": "Microsoft",
+   "version": "25.0.23364.30067"
+}],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
