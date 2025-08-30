@@ -6,12 +6,12 @@ pageextension 50121 "QC Entry Card" extends "QC Entry Card"
 
         addafter("Item ID")
         {
-            field("Item Category Code"; Rec."Item Category Code")
-            {
-                ApplicationArea = all;
+            // field("Item Category Code"; Rec."Item Category Code")
+            // {
+            //     ApplicationArea = all;
 
 
-            }
+            // }
         }
         // modify("PO No.")
         // {
@@ -27,14 +27,14 @@ pageextension 50121 "QC Entry Card" extends "QC Entry Card"
         // }
 
     }
-    //Aakanksha18072025
-    trigger OnAfterGetRecord()
-    begin
-        RecItem.SetRange("No.", rec."Item ID");
-        if RecItem.FindSet() then begin
-            rec."Item Category Code" := RecItem."Item Category Code";
-        end;
-    end;
+    // //Aakanksha18072025
+    // trigger OnAfterGetRecord()
+    // begin
+    //     RecItem.SetRange("No.", rec."Item ID");
+    //     if RecItem.FindSet() then begin
+    //         rec."Item Category Code" := RecItem."Item Category Code";
+    //     end;
+    // end;
 
     var
         RecItem: Record item;
