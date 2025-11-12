@@ -52,5 +52,6 @@ pageextension 50144 SalesEnquiryListExt extends "Sales Enquiry Card"
                 end;
             }
         }
+
     }
 }

@@ -24,6 +24,11 @@ tableextension 50145 SalesEnquiryHrExt extends "Sales Enquiry Header"
             CalcFormula = count("Purchase Header" where("Enquiry No." = field("Enquiry No."), "Document Type" = const(Quote)));
 
         }
+        field(50149; "Lead Status"; Enum "Lead Status")
+        {
+            DataClassification = ToBeClassified;
+
+        }
 
 
 

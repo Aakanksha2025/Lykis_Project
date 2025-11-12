@@ -83,44 +83,44 @@ pageextension 50133 PurchQuoteExt extends "Purchase Quote"
     }
     actions
     {
-        modify(SendApprovalRequest)
-        {
-            trigger OnAfterAction()
-            var
-                RecPurchLine: Record "Purchase Line";
-                PurchLine: Record "Purchase Line";
-            begin
-                // begin
-                //     if RecPurchLine.Quantity <= 0 then begin
-                //         Error('Approved quantity should not be zero or blank.');
-                //     end;
-                // END;
+        // modify(SendApprovalRequest)
+        // {
+        //     trigger OnAfterAction()
+        //     var
+        //         RecPurchLine: Record "Purchase Line";
+        //         PurchLine: Record "Purchase Line";
+        //     begin
+        //         // begin
+        //         //     if RecPurchLine.Quantity <= 0 then begin
+        //         //         Error('Approved quantity should not be zero or blank.');
+        //         //     end;
+        //         // END;
 
-                begin
-                    if Rec.Status <> Rec.Status::Open then begin
-                        Message('HSN Code cannot be updated because the document status is not Open.');
-                        exit;
-                    end;
+        //         begin
+        //             if Rec.Status <> Rec.Status::Open then begin
+        //                 Message('HSN Code cannot be updated because the document status is not Open.');
+        //                 exit;
+        //             end;
 
-                    PurchLine.SetRange("Document Type", Rec."Document Type");
-                    PurchLine.SetRange("Document No.", Rec."No.");
+        //             PurchLine.SetRange("Document Type", Rec."Document Type");
+        //             PurchLine.SetRange("Document No.", Rec."No.");
 
-                    if PurchLine.FindSet() then begin
-                        repeat
-                            PurchLine.Validate("HSN/SAC Code", GetHSNCodeForItem(PurchLine."No."));
-                            PurchLine.Modify();
-                        until PurchLine.Next() = 0;
+        //             if PurchLine.FindSet() then begin
+        //                 repeat
+        //                     PurchLine.Validate("HSN/SAC Code", GetHSNCodeForItem(PurchLine."No."));
+        //                     PurchLine.Modify();
+        //                 until PurchLine.Next() = 0;
 
-                        Message('HSN Codes have been updated successfully.');
-                    end else
-                        Message('No purchase lines found to update.');
-                end;
+        //                 Message('HSN Codes have been updated successfully.');
+        //             end else
+        //                 Message('No purchase lines found to update.');
+        //         end;
 
-            end;
+        //     end;
 
 
 
-        }
+        // }
         addafter("Release")
         {
             action(UpdateHSNCode)
