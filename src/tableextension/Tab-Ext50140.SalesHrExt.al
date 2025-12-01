@@ -16,7 +16,8 @@ tableextension 50140 SalesHrExt extends "Sales Header"
         field(50142; "Purchase Order List"; Integer)
         {
             FieldClass = FlowField;
-            CalcFormula = count("Purchase Header" where("Proforma Invoice No." = field("No."), "Document Type" = const(Order)));
+            //CalcFormula = count("Purchase Header" where("Proforma Invoice No." = field("No."), "Document Type" = const(Order)));
+            CalcFormula = count("Purchase Header" where("Enquiry No." = field("Sales Enquiry No."), "Document Type" = const(Order)));
         }
         //Aakanksha02072025
 
