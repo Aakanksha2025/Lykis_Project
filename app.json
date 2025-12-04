@@ -2,7 +2,7 @@
   "id": "3be9dab9-f19d-425a-a311-d9d1e5dcac2e",
   "name": "Lykis_Project",
   "publisher": "Aakanksha",
-  "version": "1.0.0.9",
+  "version": "1.0.0.12",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -33,6 +33,18 @@
   "name": "India GST",
    "publisher": "Microsoft",
    "version": "25.0.23364.30067"
+},
+{
+  "id": "aaf018a1-5cd6-49d1-ba66-1bb6bc217ca7",
+  "name": "Lykis_Page&Report",
+   "publisher": "Praful",
+   "version": "1.0.0.261"
+},
+{
+   "id": "4bf39ef8-96ab-4cdb-83cb-1b6db2103e19",
+  "name": "Lykis_DJ",
+   "publisher": "Tejasvi",
+   "version": "1.0.0.40"
 }],
   "screenshots": [],
   "platform": "1.0.0.0",

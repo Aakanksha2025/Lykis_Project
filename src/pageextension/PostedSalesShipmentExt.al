@@ -4,10 +4,10 @@ pageextension 60157 MyExtension extends "Posted Sales Shpt. Subform"
     {
         addafter("Location Code")
         {
-            field("Purchase Order No."; Rec."Purchase Order No.")
-            {
-                ApplicationArea = all;
-            }
+            // field("Purchase Order No."; Rec."Purchase Order No.")
+            // {
+            //     ApplicationArea = all;
+            // }
         }
     }
 

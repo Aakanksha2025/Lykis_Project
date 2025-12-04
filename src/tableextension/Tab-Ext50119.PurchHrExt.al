@@ -46,6 +46,7 @@ tableextension 50119 PurchHrExt extends "Purchase Header"
             FieldClass = FlowField;
             CalcFormula = count("Purchase Header" where("Enquiry No." = field("Enquiry No."), "Document Type" = const(order)));
         }
+        
 
 
 

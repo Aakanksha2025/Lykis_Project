@@ -7,5 +7,13 @@ tableextension 50149 "Purchase Line Exten" extends "Purchase Line"
             Caption = 'Item Status';
             DataClassification = ToBeClassified;
         }
+        field(50143; "Proforma Invoice No"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(50144; "PO Status"; Enum "PO Status")
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 }
