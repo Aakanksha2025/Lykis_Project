@@ -10,6 +10,32 @@ pageextension 50124 "Vendor Card Ext" extends "Vendor Card"
                 ShowMandatory = true;
             }
         }
+        modify(Name)
+        {
+            ShowMandatory = true;
+            ApplicationArea = all;
+        }
+        modify("Location Code")
+        {
+            ShowMandatory = true;
+        }
+        modify("Purchaser Code")
+        {
+            ShowMandatory = true;
+        }
+        modify("GST vendor Type")
+        {
+            ShowMandatory = true;
+            ApplicationArea = all;
+        }
+        modify("Gen. Bus. Posting Group")
+        {
+            ShowMandatory = true;
+        }
+        modify("Vendor Posting Group")
+        {
+            ShowMandatory = true;
+        }
         modify("Country/Region Code")
         {
             ShowMandatory = true;
@@ -28,7 +54,6 @@ pageextension 50124 "Vendor Card Ext" extends "Vendor Card"
 
     actions
     {
-        // Add changes to page actions here
     }
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
@@ -36,33 +61,29 @@ pageextension 50124 "Vendor Card Ext" extends "Vendor Card"
     begin
         MissingFields := '';
 
-        if Rec.Name = '' then
-            MissingFields += 'Name, ';
+        // if Rec.Name = '' then
+        //     MissingFields += 'Name, ';
 
-        if Rec."Location Code" = '' then
-            MissingFields += 'Location Code, ';
+        // if Rec."Location Code" = '' then
+        //     MissingFields += 'Location Code, ';
 
-        if Rec."Purchaser Code" = '' then
-            MissingFields += 'Purchaser Code, ';
+        // if Rec."Purchaser Code" = '' then
+        //     MissingFields += 'Purchaser Code, ';
 
         if Rec."GST Vendor Type" = Rec."GST Vendor Type"::" " then
-            MissingFields += 'GST Vendor Type, ';
+            MissingFields += 'GST Vendor Type';
 
-        if Rec."Gen. Bus. Posting Group" = '' then
-            MissingFields += 'Gen. Bus. Posting Group, ';
+        // if Rec."Gen. Bus. Posting Group" = '' then
+        //     MissingFields += 'Gen. Bus. Posting Group, ';
 
-        if Rec."Vendor Posting Group" = '' then
-            MissingFields += 'Vendor Posting Group, ';
-
-        // If anything is missing → show all fields in one message
+        // if Rec."Vendor Posting Group" = '' then
+        //     MissingFields += 'Vendor Posting Group, ';
         if MissingFields <> '' then begin
-            Message(
-                'Please fill the following mandatory fields before closing the page:\%1',
-                MissingFields);
-            exit(false); // Prevent closing the page
+            Message('Please fill the %1', MissingFields);
+            exit(false);
         end;
 
-        exit(true); // Allow closing the pages
+        exit(true); 
     end;
 
 
