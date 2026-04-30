@@ -2,6 +2,8 @@ pageextension 50131 QuoteComareCardExt extends "Quote Compare Card"
 {
     layout
     {
+
+
         addafter(Remark)
         {
             field("Purchase Quote"; rec."Purchase Quote")
@@ -75,6 +77,8 @@ pageextension 50131 QuoteComareCardExt extends "Quote Compare Card"
             }
 
         }
+
+
         addafter("SE No.")
         {
             field("Sales Enquiry List"; Rec."Sales Enquiry List")
@@ -94,5 +98,59 @@ pageextension 50131 QuoteComareCardExt extends "Quote Compare Card"
                 end;
             }
         }
+
+
     }
+
+    actions
+    {
+        addafter("Release")
+        {
+            action(UpdateHSNCode)
+            {
+                ApplicationArea = All;
+                Caption = 'Update HSN Code';
+                Image = Refresh;
+
+                trigger OnAction()
+                var
+                    QuoteCompLine: Record "Quote Compare Line";
+                begin
+                    if Rec."Approval StatusL" <> Rec."Approval StatusL"::Open then begin
+                        Message('HSN Code cannot be updated because the document status is not Open.');
+                        exit;
+                    end;
+
+
+                    QuoteCompLine.SetRange("Quote Comparison No.", Rec."Quote Comparison No.");
+
+                    if QuoteCompLine.FindSet() then begin
+                        repeat
+                            QuoteCompLine.Validate("HSN Code", GetHSNCodeForItem(QuoteCompLine."Quote Comparison No."));
+                            QuoteCompLine.Modify();
+                        until QuoteCompLine.Next() = 0;
+
+                        Message('HSN Codes have been updated successfully.');
+                    end else
+                        Message('No purchase lines found to update.');
+                end;
+
+            }
+        }
+
+    }
+    local procedure GetHSNCodeForItem(ItemNo: Code[20]): Code[20]
+    var
+        Item: Record Item;
+    begin
+        if Item.Get(ItemNo) then
+            exit(Item."HSN/SAC Code")
+        else
+            exit('');
+    end;
+
 }
+
+
+
+

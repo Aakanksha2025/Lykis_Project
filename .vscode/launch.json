@@ -1,22 +1,22 @@
 {
     "version": "0.2.0",
     "configurations": [
-       // {
-            // "name": "Microsoft cloud sandbox",
-            // "request": "launch",
-            // "type": "al",
-            // "environmentType": "Sandbox",
-            // "environmentName": "NEWDEV",
-            // "tenant": "8acfc7c1-8f85-488a-af78-19f53fc9f5a3",
-            // "startupObjectId": 22,
-            // "startupObjectType": "Page",
-            // "breakOnError": "All",
-            // "launchBrowser": true,
-            // "enableLongRunningSqlStatements": true,
-            // "enableSqlInformationDebugger": true,
-            // //"schemaUpdateMode": "ForceSync"
+    //    {
+    //         "name": "Microsoft cloud sandbox",
+    //         "request": "launch",
+    //         "type": "al",
+    //         "environmentType": "Sandbox",
+    //         "environmentName": "NEWDEV",
+    //         "tenant": "8acfc7c1-8f85-488a-af78-19f53fc9f5a3",
+    //         "startupObjectId": 22,
+    //         "startupObjectType": "Page",
+    //         "breakOnError": "All",
+    //         "launchBrowser": true,
+    //         "enableLongRunningSqlStatements": true,
+    //         "enableSqlInformationDebugger": true,
+    //         //"schemaUpdateMode": "ForceSync"
             
-       // },
+    //    },
         {
             "name": "NEWUAT",
             "request": "launch",
@@ -46,6 +46,21 @@
             "enableSqlInformationDebugger": true,
            // "tenant": "8acfc7c1-8f85-488a-af78-19f53fc9f5a3",
             //"schemaUpdateMode": "ForceSync"
+        },
+          {
+            "name": "TEST_310126",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "TEST_310126",
+
+            "tenant": "8acfc7c1-8f85-488a-af78-19f53fc9f5a3",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
         }
     ]
 }
