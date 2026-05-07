@@ -121,13 +121,12 @@ pageextension 50131 QuoteComareCardExt extends "Quote Compare Card"
                         exit;
                     end;
 
-
                     QuoteCompLine.SetRange("Quote Comparison No.", Rec."Quote Comparison No.");
 
                     if QuoteCompLine.FindSet() then begin
                         repeat
-                            QuoteCompLine.Validate("HSN Code", GetHSNCodeForItem(QuoteCompLine."Quote Comparison No."));
-                            QuoteCompLine.Modify();
+                            QuoteCompLine."HSN Code" := GetHSNCodeForItem(QuoteCompLine."Item No.");
+                            QuoteCompLine.Modify(true);
                         until QuoteCompLine.Next() = 0;
 
                         Message('HSN Codes have been updated successfully.');
